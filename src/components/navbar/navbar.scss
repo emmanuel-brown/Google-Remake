@@ -1,0 +1,233 @@
+@import '../cssUtils.scss';
+
+
+#navbarS {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: $grey;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 9px;
+    .left{
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        &>*{
+            margin: auto 12px;
+        }
+        &-active{
+            padding: 7px 6px;
+            color: $blue;
+            border-bottom: 2px $blue solid;
+        }
+        &-menu{
+            display: flex;
+            flex-direction: column;
+            &-line{
+                width: 24px;
+                height: 3px;
+                background-color: $grey;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .right{
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        &>*{
+            margin: auto 12px;
+        }
+        &-apps{
+            padding-top: 4px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 20px;
+            height: 20px;
+            &-dots{
+                display: block;
+                background-color: $grey;
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+            }
+        }
+        &-account{
+            color: $white;
+            background-color: $pinkish;
+            font-weight: bolder;
+            font-size: 20px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30;
+        }
+    }
+}
+
+#navbar {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: $grey;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 9px;
+    .left{
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        &>*{
+            margin: auto 12px;
+        }
+        &-active{
+            padding: 7px 6px;
+            color: $blue;
+            border-bottom: 2px $blue solid;
+        }
+        &-menu{
+            display: flex;
+            flex-direction: column;
+            &-line{
+                width: 24px;
+                height: 3px;
+                background-color: $grey;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .right{
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        &>*{
+            margin: auto 12px;
+        }
+        &-apps{
+            padding-top: 4px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 20px;
+            height: 20px;
+            &-dots{
+                display: block;
+                background-color: $grey;
+                width: 4px;
+                height: 4px;
+            }
+        }
+        &-account{
+            color: $white;
+            background-color: $pinkish;
+            font-weight: bolder;
+            font-size: 20px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30;
+        }
+    }
+}
+
+
+#dropdowns{
+    font-family: 'Noto Sans JP', sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $darken;
+    z-index: 1;
+}
+
+#dropdowns #menu{
+    padding-top: 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: $white;
+    animation-name: menu;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+    animation-timing-function: ease;
+    .logo{
+        width: 108px;
+        padding-bottom: 8px;
+        margin-left: 13px;
+    }
+    .options{
+        font-size: 13px;
+        color: $grey;
+        display: flex;
+        flex-direction: column;
+        font-weight: lighter;
+        // border-bottom: 1px solid $grey;
+        .sect{
+            border-bottom: 1px solid $grey;
+        }
+        &-opt{
+            display: flex;
+            align-items: center; //if it ain't broke don't fix it
+            &-svg{
+                vertical-align: center;
+                width: 26px;
+                height: 26px;
+                padding: 1em 1em;
+            }
+        }
+    }
+}
+
+#dropdowns #apps {
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 50px;
+    right: 6px;
+    border: 1px solid #707579;
+    background-color: $white;
+    width: 297px;
+    height: 397px;
+    padding: 20px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    grid-auto-rows: auto;
+    .option{
+        height: 100px;
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 40px;
+        }
+    }
+    .seperate{
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $grey;
+        color: $grey;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    #dropdowns #apps{
+        right: 29px;
+    }
+}
+
+
+@keyframes menu{
+    0% {
+        left: -250px;
+    }
+    100% {
+        left: 0px;
+    }
+}

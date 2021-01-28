@@ -1,0 +1,93 @@
+@import '../../components/cssUtils.scss';
+
+#home{
+    font-family: 'Noto Sans JP', sans-serif;
+    .logo{
+        display: block;
+        margin: 2em auto;
+        width: 176px;
+    }
+}
+
+#home .searchBar{
+    display: flex;
+    z-index: 1000;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 96%;
+    height: 35px;
+    border: 1px solid $grey;
+    border-radius: 20px;
+    .input{
+        width: 100%;
+        border: none;
+        outline: none;
+    }
+    .icon{
+        width: 20px;
+        padding: 0 .5em;
+    }
+}
+
+#home .searchBarActive{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    width: 100vw;
+    height: 100vh;
+    .input{
+        height: 5%;
+        width: 80%;
+        border: none;
+        outline: none;
+        border-bottom: 1px $grey solid
+    }
+    .icon{
+        width: 20px;
+        height: 5%;
+        padding: 0 .5em;
+    }
+}
+
+#home .buttons{
+    display: none;
+}
+
+@media screen and (min-width: 1000px){
+    #home{
+        .logo{
+            display: block;
+            margin: 2em auto;  
+            width: 285px;
+            padding-top: 120px;
+        }
+    }
+    #home .searchBar{
+        width: 600px;
+        height: 50px;
+        border-radius: 40px;
+        border-color: $grey;
+        .input{
+            font-size: 1em;
+        }
+        .icon{
+            width: 20px;
+            padding: 0 1em;
+        }
+    }
+    #home .buttons{
+        display: flex;
+        justify-content: center;
+        .bttn{
+            margin: 20px 9px;
+            outline: none;
+            height: 38px;
+            width: 143px;
+            border: none;
+            border-radius: 2px;
+        }
+    }
+}
